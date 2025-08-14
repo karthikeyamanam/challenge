@@ -1,0 +1,99 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 102, 0, 0.15) 0%, transparent 70%);
+    animation: pulse 6s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(1.2); }
+}
+
+.showcase-container {
+    max-width: 1100px;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.image-box {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(255, 153, 0, 0.7);
+    animation: floatImage 5s ease-in-out infinite;
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes floatImage {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.content h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #ffcc00;
+    text-shadow: 0 0 15px #ff9900, 0 0 30px #ff6600;
+    margin-bottom: 20px;
+}
+
+.content p {
+    max-width: 800px;
+    margin: 0 auto 15px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+
+.btn {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff6600, #ffcc00);
+    color: #000;
+    padding: 14px 40px;
+    border-radius: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.8);
+    margin-top: 20px;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 204, 0, 0.9);
+}
